@@ -52,8 +52,8 @@ section {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background-color: #25d366;
+    border-color: white;
     color: var(--light-color);
     padding: 10px 25px;
     border-radius: 30px;

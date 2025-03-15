@@ -1,12 +1,46 @@
-// Initialize AOS (Animation On Scroll)
 document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false,
-        disable: window.innerWidth < 768 // Disable animations on mobile for better performance
-    });
+    // Detect device type
+    const isMobile = window.innerWidth <= 767;
+    
+    // Initialize animations with appropriate settings for device type
+    if (!isMobile) {
+        // Desktop animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false,
+            offset: 100
+        });
+    } else {
+        // Mobile animations - don't disable, but use lighter settings
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out',
+            once: true,
+            mirror: false,
+            offset: 50
+        });
+        
+        // Add additional mobile-specific animations
+        const fadeElements = document.querySelectorAll('[data-aos]');
+        fadeElements.forEach(el => {
+            el.classList.add('fade-up-mobile');
+        });
+        
+        // Use Intersection Observer for better performance on mobile
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {threshold: 0.1});
+        
+        document.querySelectorAll('.fade-up-mobile').forEach(el => {
+            observer.observe(el);
+        });
+    }
 
     // Add scroll event to change navbar background
     const navbar = document.querySelector('.navbar');
@@ -41,12 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Set minimum date for orders (tomorrow)
-    const today = new Date();
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const formattedDate = tomorrow.toISOString().split('T')[0];
 
     // Handle WhatsApp messaging
     document.querySelectorAll('.btn-primary').forEach(button => {
@@ -94,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Add this to your CSS
+    // Add back to top button styles
     const style = document.createElement('style');
     style.textContent = `
         .back-to-top {
@@ -120,8 +148,71 @@ document.addEventListener('DOMContentLoaded', function() {
             opacity: 1;
             transform: translateY(-3px);
         }
+        /* Add fade-up-mobile animation styles */
+        .fade-up-mobile {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .fade-up-mobile.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Add smooth transitions for carousel items */
+        #mobileProductCarousel .carousel-item {
+            transition: transform 0.6s ease-in-out;
+        }
     `;
     document.head.appendChild(style);
+    
+    // Mobile product carousel setup with improved animations
+    const productCarousel = document.getElementById('mobileProductCarousel');
+    if (productCarousel && isMobile) {
+        // Force a reflow to ensure smooth initial animation
+        setTimeout(() => {
+            productCarousel.classList.add('carousel-initialized');
+            
+            const carousel = new bootstrap.Carousel(productCarousel, {
+                interval: 5000,
+                touch: true,
+                wrap: true,
+                ride: 'carousel'
+            });
+            
+            // Enhance slide transitions
+            productCarousel.addEventListener('slide.bs.carousel', function(e) {
+                const activeItem = e.relatedTarget;
+                setTimeout(() => {
+                    activeItem.style.opacity = '1';
+                }, 50);
+            });
+            
+            // Add enhanced swipe gesture support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let touchThreshold = 50;
+            
+            productCarousel.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            
+            productCarousel.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+            
+            function handleSwipe() {
+                if (touchEndX < touchStartX - touchThreshold) {
+                    // Swipe left - next slide
+                    carousel.next();
+                }
+                if (touchEndX > touchStartX + touchThreshold) {
+                    // Swipe right - previous slide
+                    carousel.prev();
+                }
+            }
+        }, 100);
+    }
 });
 
 // Image placeholder function (creates a placeholder image with specified text)
@@ -159,85 +250,3 @@ window.addEventListener('load', function() {
         });
     });
 });
-document.addEventListener('DOMContentLoaded', function() {
-    // Detect mobile devices
-    const isMobile = window.innerWidth <= 767;
-    
-    if (isMobile) {
-        // Replace AOS with simpler mobile animations
-        const fadeElements = document.querySelectorAll('[data-aos]');
-        fadeElements.forEach(el => {
-            el.classList.add('fade-up-mobile');
-            el.removeAttribute('data-aos');
-        });
-        
-        // Simple scroll-based animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, {threshold: 0.1});
-        
-        document.querySelectorAll('.fade-up-mobile').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // Add padding for sticky CTA if present
-        if (document.querySelector('.mobile-sticky-cta')) {
-            document.body.classList.add('has-sticky-cta');
-        }
-    } else {
-        // Initialize AOS for desktop
-        AOS.init({
-            duration: 800,
-            offset: 100,
-            once: true
-        });
-    }
-});
-// ...existing code...
-
-// Initialize mobile product carousel with custom settings
-document.addEventListener('DOMContentLoaded', function() {
-    // ...existing code...
-    
-    // Mobile product carousel setup
-    if (window.innerWidth < 768) {
-        const productCarousel = document.getElementById('mobileProductCarousel');
-        if (productCarousel) {
-            const carousel = new bootstrap.Carousel(productCarousel, {
-                interval: 5000,  // Auto-sliding interval in milliseconds
-                touch: true,     // Enable swipe on touch devices
-                wrap: true       // Continuous looping
-            });
-            
-            // Add swipe gesture support
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            productCarousel.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-            }, false);
-            
-            productCarousel.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, false);
-            
-            function handleSwipe() {
-                if (touchEndX < touchStartX - 50) {
-                    // Swipe left - next slide
-                    carousel.next();
-                }
-                if (touchEndX > touchStartX + 50) {
-                    // Swipe right - previous slide
-                    carousel.prev();
-                }
-            }
-        }
-    }
-});
-
-// ...existing code...
