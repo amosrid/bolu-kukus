@@ -598,7 +598,10 @@ section {
 
 @media (max-width: 575.98px) {
     .navbar-brand span {
-        display: none; /* Hide brand text on very small screens */
+        /* display: none; Hide brand text on very small screens */
+    }
+    .navbar-brand img {
+        height: 35px; /* Make logo slightly smaller */
     }
     
     .hero-section {
@@ -747,5 +750,3 @@ section {
     background-color: var(--primary-color);
     opacity: 1;
 }
-
-/* ...existing code... */
