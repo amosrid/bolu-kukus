@@ -197,3 +197,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// ...existing code...
+
+// Initialize mobile product carousel with custom settings
+document.addEventListener('DOMContentLoaded', function() {
+    // ...existing code...
+    
+    // Mobile product carousel setup
+    if (window.innerWidth < 768) {
+        const productCarousel = document.getElementById('mobileProductCarousel');
+        if (productCarousel) {
+            const carousel = new bootstrap.Carousel(productCarousel, {
+                interval: 5000,  // Auto-sliding interval in milliseconds
+                touch: true,     // Enable swipe on touch devices
+                wrap: true       // Continuous looping
+            });
+            
+            // Add swipe gesture support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            productCarousel.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            productCarousel.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 50) {
+                    // Swipe left - next slide
+                    carousel.next();
+                }
+                if (touchEndX > touchStartX + 50) {
+                    // Swipe right - previous slide
+                    carousel.prev();
+                }
+            }
+        }
+    }
+});
+
+// ...existing code...

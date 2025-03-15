@@ -1,13 +1,13 @@
 /* General Styles */
 :root {
-    --primary-color: #D35400;
-    --secondary-color: #FFF3E0;
-    --accent-color: #FFD700;
-    --text-color: #5D4037;
-    --light-color: #ffffff;
-    --gray-color: #f9f9f9;
-    --dark-gray: #6c757d;
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --primary-color: #E67E22; /* Warmer orange */
+    --secondary-color: #FFF0DB; /* Warmer cream background */
+    --accent-color: #FFA726; /* Warmer amber accent */
+    --text-color: #5D4037; /* Keep warm brown text */
+    --light-color: #fffaf2; /* Slightly cream-tinted white */
+    --gray-color: #faf6f2; /* Warmer light gray */
+    --dark-gray: #7D6E63; /* Warmer dark gray */
+    --shadow: 0 5px 15px rgba(160, 82, 45, 0.1); /* Warmer shadow */
     --transition: all 0.3s ease;
 }
 
@@ -688,3 +688,64 @@ section {
         font-size: 0.85rem;
     }
 }
+/* ...existing code... */
+
+/* Mobile Product Carousel Styles */
+#mobileProductCarousel {
+    margin-bottom: 2rem;
+    padding: 0 15px;
+}
+
+#mobileProductCarousel .carousel-item {
+    padding: 10px;
+}
+
+#mobileProductCarousel .carousel-control-prev,
+#mobileProductCarousel .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+}
+
+#mobileProductCarousel .carousel-control-prev {
+    left: 0;
+}
+
+#mobileProductCarousel .carousel-control-next {
+    right: 0;
+}
+
+#mobileProductCarousel .carousel-control-prev:hover,
+#mobileProductCarousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+#mobileProductCarousel .carousel-control-prev-icon,
+#mobileProductCarousel .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+#mobileProductCarousel .carousel-indicators {
+    bottom: -30px;
+}
+
+#mobileProductCarousel .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--dark-gray);
+    opacity: 0.5;
+    margin: 0 5px;
+}
+
+#mobileProductCarousel .carousel-indicators .active {
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+/* ...existing code... */
