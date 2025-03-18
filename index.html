@@ -5,164 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bolu Kukus Bu Mei - Jajanan Tradisional Surakarta | Nusukan</title>
     <meta name="description" content="Bolu kukus homemade khas Surakarta dengan tekstur lembut dan rasa yang nikmat. Tersedia di Nusukan, Banjarsari. Pesan sekarang untuk acara atau cemilan sehari-hari.">
-    
-    <!-- Resource Hints -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
-    
-    <!-- Critical CSS Inline -->
-    <style>
-        :root {
-            --primary-color: #ff6b6b;
-            --secondary-color: #4ecdc4;
-            --accent-color: #ffe66d;
-            --dark-color: #292f36;
-            --light-color: #fff;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .loading-container {
-            text-align: center;
-        }
-        .loading-text {
-            color: #ff6b6b;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        .loading-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-        }
-        .dot {
-            width: 12px;
-            height: 12px;
-            background-color: #ff6b6b;
-            border-radius: 50%;
-            display: inline-block;
-            animation: dotPulse 1.5s infinite ease-in-out;
-        }
-        .dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        .dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-        @keyframes dotPulse {
-            0%, 100% {
-                transform: scale(0.7);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-        }
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 10px 0;
-        }
-        .hero-section {
-            padding-top: 80px;
-            padding-bottom: 40px;
-        }
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 24px;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            z-index: 1000;
-        }
-    </style>
-    
-    <!-- Preload Hero Image -->
-    <link rel="preload" as="image" href="images/bolukukusgoogle.webp">
-    
-    <!-- Deferred CSS Loading -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
-    
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
-    
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
-    
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
-    
-    <!-- CSS Loading Fallback -->
-    <script>
-    /* CSS loading fallback */
-    (function() {
-        var css = document.createElement('link');
-        css.rel = 'stylesheet';
-        css.href = 'styles.css';
-        document.getElementsByTagName('head')[0].appendChild(css);
-    })();
-    </script>
-    
-    <!-- Meta tags -->
     <meta name="keywords" content="bolu kukus, bolu kukus surakarta, bolu kukus nusukan, bolu bu mei, jajanan tradisional surakarta, kue basah surakarta">
+    <title>Bolu Bu Mei - Lembut & Lezat Seperti Buatan Ibu</title>
+
     <meta property="og:title" content="Bolu Kukus Bu Mei - Jajanan Tradisional Surakarta">
     <meta property="og:description" content="Bolu kukus homemade khas Surakarta dengan tekstur lembut dan rasa yang nikmat. Tersedia di Nusukan, Banjarsari.">
     <meta property="og:image" content="images/bolukukusgoogle.webp">
     <meta property="og:type" content="website">
+    
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bolu Kukus Bu Mei - Jajanan Tradisional Surakarta">
     <meta name="twitter:description" content="Bolu kukus homemade khas Surakarta dengan tekstur lembut dan rasa yang nikmat. Tersedia di Nusukan, Banjarsari.">
     <meta name="twitter:image" content="images/bolukukusgoogle.webp">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loading-container">
-            <div class="loading-text">Loading</div>
-            <div class="loading-dots">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-    </div>
-
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/628123456789?text=Saya%20ingin%20memesan%20Bolu%20Bu%20Mei" class="whatsapp-float" target="_blank" rel="noopener">
+    <a href="https://wa.me/628123456789?text=Saya%20ingin%20memesan%20Bolu%20Bu%20Mei" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -170,7 +43,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="images/bolukukusai.webp" alt="Bolu Bu Mei Logo" width="50" height="50">
+                <img src="images/bolukukusai.webp" alt="Bolu Bu Mei Logo" height="50">
                 <span>Bolu Bu Mei</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -205,12 +78,12 @@
                         <i class="fas fa-info-circle"></i> 
                         <span>Pemesanan dibutuhkan minimal 1 hari sebelumnya dengan konfirmasi terlebih dahulu.</span>
                     </div>
-                    <a href="https://wa.me/628123456789?text=Saya%20ingin%20memesan%20Bolu%20Kukus" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                    <a href="https://wa.me/628123456789?text=Saya%20ingin%20memesan%20Bolu%20Kukus" class="btn btn-primary btn-lg" target="_blank">
                         <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
                     </a>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <img src="images/bolukukusgoogle.webp" alt="Bolu Kukus Bu Mei Surakarta" class="img-fluid rounded hero-image" width="540" height="360">
+                    <img src="images/bolukukusgoogle.webp" alt="Bolu Kukus Bu Mei Surakarta" class="img-fluid rounded hero-image">
                 </div>
             </div>
         </div>
@@ -223,115 +96,115 @@
                 <h2>Produk Kami</h2>
                 <div class="divider"></div>
             </div>
-            
-            <div class="order-notice" data-aos="fade-up">
-                <div class="notice-box">
-                    <div class="notice-icon">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </div>
-                    <div class="notice-content">
-                        <h4>Informasi Pemesanan</h4>
-                        <p>Bolu kami dibuat fresh setiap hari. Untuk menjamin ketersediaan, mohon pesan minimal 1 hari sebelumnya dan tunggu konfirmasi dari kami.</p>
-                        <p>Kadang-kadang kami memiliki stok yang ready untuk dibeli langsung. Silahkan tanyakan ketersediaan melalui WhatsApp.</p>
-                    </div>
+<!-- ...existing code... -->
+<div class="order-notice" data-aos="fade-up">
+    <div class="notice-box">
+        <div class="notice-icon">
+            <i class="fas fa-exclamation-circle"></i>
+        </div>
+        <div class="notice-content">
+            <h4>Informasi Pemesanan</h4>
+            <p>Bolu kami dibuat fresh setiap hari. Untuk menjamin ketersediaan, mohon pesan minimal 1 hari sebelumnya dan tunggu konfirmasi dari kami.</p>
+            <p>Kadang-kadang kami memiliki stok yang ready untuk dibeli langsung. Silahkan tanyakan ketersediaan melalui WhatsApp.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Desktop Products Display -->
+<div class="row d-none d-md-flex">
+    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/bolukukusai.webp" alt="Bolu Kukus Cokelat" class="img-fluid">
+            </div>
+            <div class="product-info">
+                <h4>Bolu Kukus Cokelat</h4>
+                <p>Bolu kukus dengan rasa cokelat yang kaya dan tekstur yang lembut.</p>
+                <div class="price">Rp 3.000/pcs</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/bolukukusai.webp" alt="Bolu Kukus Pink" class="img-fluid">
+            </div>
+            <div class="product-info">
+                <h4>Bolu Kukus Pink</h4>
+                <p>Bolu kukus dengan warna pink yang cantik dan rasa yang manis.</p>
+                <div class="price">Rp 3.000/pcs</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/bolukukusai.webp" alt="Bolu Kukus Hijau" class="img-fluid">
+            </div>
+            <div class="product-info">
+                <h4>Bolu Kukus Hijau</h4>
+                <p>Bolu kukus dengan warna hijau pandan yang segar dan lezat.</p>
+                <div class="price">Rp 3.000/pcs</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile Products Carousel -->
+<div id="mobileProductCarousel" class="carousel slide d-block d-md-none" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/bolukukusai.webp" alt="Bolu Kukus Cokelat" class="img-fluid">
+                </div>
+                <div class="product-info">
+                    <h4>Bolu Kukus Cokelat</h4>
+                    <p>Bolu kukus dengan rasa cokelat yang kaya dan tekstur yang lembut.</p>
+                    <div class="price">Rp 3.000/pcs</div>
                 </div>
             </div>
-
-            <!-- Desktop Products Display -->
-            <div class="row d-none d-md-flex">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/bolukukusai.webp" alt="Bolu Kukus Cokelat" class="img-fluid" width="300" height="200" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h4>Bolu Kukus Cokelat</h4>
-                            <p>Bolu kukus dengan rasa cokelat yang kaya dan tekstur yang lembut.</p>
-                            <div class="price">Rp 3.000/pcs</div>
-                        </div>
-                    </div>
+        </div>
+        <div class="carousel-item">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/bolukukusai.webp" alt="Bolu Kukus Pink" class="img-fluid">
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/bolukukusai.webp" alt="Bolu Kukus Pink" class="img-fluid" width="300" height="200" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h4>Bolu Kukus Pink</h4>
-                            <p>Bolu kukus dengan warna pink yang cantik dan rasa yang manis.</p>
-                            <div class="price">Rp 3.000/pcs</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/bolukukusai.webp" alt="Bolu Kukus Hijau" class="img-fluid" width="300" height="200" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h4>Bolu Kukus Hijau</h4>
-                            <p>Bolu kukus dengan warna hijau pandan yang segar dan lezat.</p>
-                            <div class="price">Rp 3.000/pcs</div>
-                        </div>
-                    </div>
+                <div class="product-info">
+                    <h4>Bolu Kukus Pink</h4>
+                    <p>Bolu kukus dengan warna pink yang cantik dan rasa yang manis.</p>
+                    <div class="price">Rp 3.000/pcs</div>
                 </div>
             </div>
-
-            <!-- Mobile Products Carousel -->
-            <div id="mobileProductCarousel" class="carousel slide d-block d-md-none" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="images/bolukukusai.webp" alt="Bolu Kukus Cokelat" class="img-fluid" width="300" height="200" loading="lazy">
-                            </div>
-                            <div class="product-info">
-                                <h4>Bolu Kukus Cokelat</h4>
-                                <p>Bolu kukus dengan rasa cokelat yang kaya dan tekstur yang lembut.</p>
-                                <div class="price">Rp 3.000/pcs</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="images/bolukukusai.webp" alt="Bolu Kukus Pink" class="img-fluid" width="300" height="200" loading="lazy">
-                            </div>
-                            <div class="product-info">
-                                <h4>Bolu Kukus Pink</h4>
-                                <p>Bolu kukus dengan warna pink yang cantik dan rasa yang manis.</p>
-                                <div class="price">Rp 3.000/pcs</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="images/bolukukusai.webp" alt="Bolu Kukus Hijau" class="img-fluid" width="300" height="200" loading="lazy">
-                            </div>
-                            <div class="product-info">
-                                <h4>Bolu Kukus Hijau</h4>
-                                <p>Bolu kukus dengan warna hijau pandan yang segar dan lezat.</p>
-                                <div class="price">Rp 3.000/pcs</div>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+        <div class="carousel-item">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/bolukukusai.webp" alt="Bolu Kukus Hijau" class="img-fluid">
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#mobileProductCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#mobileProductCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#mobileProductCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#mobileProductCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#mobileProductCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <div class="product-info">
+                    <h4>Bolu Kukus Hijau</h4>
+                    <p>Bolu kukus dengan warna hijau pandan yang segar dan lezat.</p>
+                    <div class="price">Rp 3.000/pcs</div>
                 </div>
             </div>
-
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mobileProductCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mobileProductCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mobileProductCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#mobileProductCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#mobileProductCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+</div>
+<!-- ...existing code... -->
             <div class="color-variant-box" data-aos="fade-up">
                 <h4>Pilihan Warna Lainnya</h4>
                 <div class="color-variants">
@@ -469,24 +342,51 @@
     </footer>
 
     <!-- Bootstrap Bundle with Popper -->
-      <script>
-        // This script runs immediately
-        document.addEventListener('DOMContentLoaded', function() {
-            // Preloader removal
-            window.addEventListener('load', function() {
-                const preloader = document.getElementById('preloader');
-                preloader.style.transition = 'opacity 0.5s ease';
-                preloader.style.opacity = '0';
-                setTimeout(function() {
-                    preloader.style.display = 'none';
-                }, 500);
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Defer non-critical JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="script.js" defer></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Bolu Kukus Bu Mei",
+            "description": "Bolu kukus homemade khas Surakarta dengan tekstur lembut dan rasa yang nikmat.",
+            "image": "images/bolukukusgoogle.webp.jpeg",
+            "priceRange": "Rp 3.000 per pcs",
+            "telephone": "+62 818-0441-7442",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Jl. Kapten Piere Tendean No.133, Nusukan",
+                "addressLocality": "Surakarta",
+                "addressRegion": "Jawa Tengah",
+                "postalCode": "57135",
+                "addressCountry": "ID"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "-7.545135574487004",
+                "longitude": "110.8176367745502"
+            },
+            "url": "https://bolubumei.com/",
+            "sameAs": [
+                "https://instagram.com/bolubumei",
+                "https://facebook.com/bolubumei"
+            ],
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "08:00",
+                    "closes": "17:00"
+                }
+            ],
+            "servesCuisine": "Kue Tradisional Indonesia",
+            "keywords": "bolu kukus, bolu kukus surakarta, bolu kukus nusukan, jajanan tradisional"
+        }
+    </script>
 </body>
 </html>
