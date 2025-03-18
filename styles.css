@@ -751,6 +751,7 @@ section {
     opacity: 1;
 }
 /* Preloader Styles - Fixed for Mobile */
+/* Improved Preloader Styles for Perfect Mobile Centering */
 #preloader {
     position: fixed;
     top: 0;
@@ -766,6 +767,8 @@ section {
 
 .loading-container {
     text-align: center;
+    width: 100%;
+    max-width: 200px; /* Control container width */
 }
 
 .loading-text {
@@ -776,9 +779,11 @@ section {
 }
 
 .loading-dots {
-    display: inline-flex;
+    display: flex; /* Changed from inline-flex */
     justify-content: center;
-    margin: 0 auto;
+    align-items: center; /* Added for vertical alignment */
+    width: 80px; /* Fixed width container */
+    margin: 0 auto; /* Center the fixed width container */
 }
 
 .dot {
@@ -787,8 +792,7 @@ section {
     background-color: var(--primary-color);
     border-radius: 50%;
     margin: 0 6px;
-    display: inline-block;
-    transform-origin: center center;
+    flex-shrink: 0; /* Prevent dots from shrinking */
     animation: dotPulse 1.5s infinite ease-in-out;
 }
 
@@ -808,12 +812,5 @@ section {
     50% {
         transform: scale(1.1);
         opacity: 1;
-    }
-}
-
-/* Fix for older Safari mobile versions */
-@supports not (gap: 8px) {
-    .dot + .dot {
-        margin-left: 12px;
     }
 }
