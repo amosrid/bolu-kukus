@@ -1,6 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    
+    // Hide preloader when page is loaded
+    window.addEventListener('load', function() {
+        // Add fade-out animation
+        preloader.style.transition = 'opacity 0.5s ease';
+        preloader.style.opacity = '0';
+        
+        // Remove preloader from DOM after fade-out
+        setTimeout(function() {
+            preloader.style.display = 'none';
+        }, 500);
+    });
+    
+    // Existing code below...
     // Detect device type
     const isMobile = window.innerWidth <= 767;
+    
+    // Rest of your existing code...
     
     // Initialize animations with appropriate settings for device type
     if (!isMobile) {
