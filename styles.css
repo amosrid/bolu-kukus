@@ -750,7 +750,7 @@ section {
     background-color: var(--primary-color);
     opacity: 1;
 }
-/* Preloader Styles */
+/* Preloader Styles - Fixed for Mobile */
 #preloader {
     position: fixed;
     top: 0;
@@ -776,9 +776,9 @@ section {
 }
 
 .loading-dots {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
-    gap: 8px;
+    margin: 0 auto;
 }
 
 .dot {
@@ -786,7 +786,9 @@ section {
     height: 12px;
     background-color: var(--primary-color);
     border-radius: 50%;
+    margin: 0 6px;
     display: inline-block;
+    transform-origin: center center;
     animation: dotPulse 1.5s infinite ease-in-out;
 }
 
@@ -804,7 +806,14 @@ section {
         opacity: 0.5;
     }
     50% {
-        transform: scale(1.2);
+        transform: scale(1.1);
         opacity: 1;
+    }
+}
+
+/* Fix for older Safari mobile versions */
+@supports not (gap: 8px) {
+    .dot + .dot {
+        margin-left: 12px;
     }
 }
